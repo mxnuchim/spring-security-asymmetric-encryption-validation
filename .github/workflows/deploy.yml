@@ -84,7 +84,6 @@ jobs:
           pull: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}:latest
-            ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}:${{ steps.extract_version.outputs.VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=mas
           build-args: |
