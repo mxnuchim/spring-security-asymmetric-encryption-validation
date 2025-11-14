@@ -26,6 +26,7 @@ public class CategorySecurityService {
         final Category category = this.categoryRepository.findById(categoryId)
                                                          .orElseThrow(() -> new RuntimeException("Category not found"));
         return category.getCreatedBy()
-                       .equals(userId);
+                       .equals(userId) || category.getCreatedBy()
+                                                  .equals("APP");
     }
 }
